@@ -4,10 +4,7 @@
   "name": "𝕏ReplyGPT",
   "description": "Reply to tweets",
   "icons": {
-    "16": "src/images/icon-16.png",
-    "32": "src/images/icon-32.png",
-    "48": "src/images/icon-48.png",
-    "128": "src/images/icon-128.png"
+    "128": "src/images/XReplyGPT.png"
   },
   "background": {
     "service_worker": "src/service-worker.js",
