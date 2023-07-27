@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "version": "1.0",
+  "name": "𝕏ReplyGuy",
+  "description": "Reply to tweets",
+  "icons": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+  "background": {
+    "service_worker": "src/service-worker.js",
+    "type": "module"
+  },
+  "commands": {
+    "generate_reply": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+2",
+        "mac": "Command+Shift+2"
+      },
+      "description": "Generate reply"
+    }
+  },
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://twitter.com/*"
+  ],
+  "action": {
+    "default_popup": "src/index.html",
+    "default_icon": "images/icon-16.png"
+  }
+}
