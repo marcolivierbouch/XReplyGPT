@@ -5,6 +5,11 @@
 
 The XReplyGPT Chrome Extension is a simple yet powerful tool that automatically generates replies to tweets on Twitter. It uses open AI algorithms to analyze tweets and craft appropriate and relevant responses. This extension is designed to save you time and effort in engaging with your followers on Twitter by providing quick and personalized replies.
 
+## Demo
+Here is a quick demo of the extension in action:
+
+![demo](./docs/demo.gif)
+
 
 ## Feedback and Support
 

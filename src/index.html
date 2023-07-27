@@ -10,9 +10,11 @@
       width: 500px;
     }
   </style>
+  <meta charset="UTF-8">
+  </meta>
 </head>
 
-<div class="header-2">
+<div class="header-2 mr-6">
   <nav class="bg-white py-2 md:py-4">
     <div class="container px-4 mx-auto">
       <div class="flex justify-between items-center">
@@ -25,22 +27,42 @@
         <div class="flex-col mt-3 items-center">
           <a href="https://github.com/marcolivierbouch/XReplyGPT" target="_blank"
             class="p-2 lg:px-4 md:mx-2 text-white rounded bg-blue-600">Github</a>
-          <a href="#" target="_blank" class="p-2 lg:px-4 md:mx-2 text-white rounded bg-blue-600">Docs</a>
         </div>
       </div>
     </div>
   </nav>
+</div>
 
-  <div class="py-6 md:py-12">
-    <div class="container px-4 mx-auto">
-      <div class="text-center max-w-2xl mx-auto">
-        <input class="border-2 border-gray-500 h-10 pl-2" id="api-key" placeholder="OpenAI platform API key"></input>
-        <button id="save" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Save
-        </button>
-      </div>
+<div class="ml-6 mr-6 py-2 md:py-2">
+  <div class="mb-8 container px-4 mx-auto">
+    <h1 class="flex items-center text-xl font-extrabold dark:text-white">How it works? 🧑‍🏫</h1>
+    <div class="relative flex items-center">
+      <div class="flex-grow border-t border-gray-400"></div>
+    </div>
+    <p class="text-gray-700">1. Create an OpenAI API key <a href="https://platform.openai.com/account/api-keys"
+        target="_blank" class="underline">here</a>.</p>
+    <p class="text-gray-700">2. Save it in the config section. </p>
+    <p class="text-gray-700">3. Open <a class="underline" href="https://x.com" target="_blank">https://x.com</a>.</p>
+    <p class="text-gray-700">4. Press the shortcut CTRL+SHIFT+Q.</p>
+    <p class="text-gray-700">5. Press on the generated reply to send it.</p>
+  </div>
+
+  <div class="mb-4 container px-4 mx-auto">
+    <h1 class="flex items-center text-xl font-extrabold dark:text-white">Config ⚙️</h1>
+    <div class="mb-2 relative flex items-center">
+      <div class="flex-grow border-t border-gray-400"></div>
+    </div>
+    <div class="max-w-2xl mx-auto">
+      <input class="border-2 border-gray-500 h-10 pl-2" id="api-key" placeholder="OpenAI platform API key"></input>
+      <button id="save" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Save
+      </button>
     </div>
   </div>
+</div>
+
+<div class="mt-4 ml-6 w-full pb-4 text-sm text-left fade-in">
+  <a class="text-gray-500 no-underline hover:no-underline" href="#">&copy; XReplyGPT 2023</a>
 </div>
 
 </html>
