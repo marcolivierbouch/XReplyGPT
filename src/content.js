@@ -46,11 +46,15 @@ if (window.articles) {
             },
             body: JSON.stringify({
                 "messages": [
-                    { role: "system", content: `You are a ghostwriter for users tweets. Return only one tweet. Keep it short. Exclude hashtags. Exclude emojis. Don't apologize` },
-                    { role: "system", content: "Exclude everything after the tweet. Exclude hashtags. Exclude emojis. Don't apologize. Don't provide translation. Don't provide notes. Exclude сalls to action." },
+                    { role: "assistant", content: `You are a ghostwriter and reply to the user's tweets by talking directly to the person, you must keep it short, exclude hashtags` },
                     { role: "user", content: content.innerText }
                 ],
                 model: "gpt-3.5-turbo",
+                temperature: 1,
+                max_tokens: 256,
+                top_p: 1,
+                frequency_penalty: 0,
+                presence_penalty: 0,
             })
         })
 
