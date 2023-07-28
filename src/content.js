@@ -46,7 +46,7 @@ if (window.articles) {
             },
             body: JSON.stringify({
                 "messages": [
-                    { role: "system", content: `You are a ghostwriter for users tweets. Return only one tweet. Keep it short.` },
+                    { role: "system", content: `You are a ghostwriter for users tweets. Return only one tweet. Keep it short. Exclude hashtags. Exclude emojis. Don't apologize` },
                     { role: "system", content: "Exclude everything after the tweet. Exclude hashtags. Exclude emojis. Don't apologize. Don't provide translation. Don't provide notes. Exclude сalls to action." },
                     { role: "user", content: content.innerText }
                 ],
