@@ -8,7 +8,7 @@ The XReplyGPT Chrome Extension is a simple yet powerful tool that automatically 
 
 ## How it works?
 1. Create an OpenAI API key [here](https://platform.openai.com/account/api-keys).  
-![api_key](./docs/generate_api_key.png)
+![api_key](./docs/generate_api_key.gif)
 2. Save it in the config section.
 3. Open https://x.com.
 4. Press the shortcut CTRL+SHIFT+Q.
