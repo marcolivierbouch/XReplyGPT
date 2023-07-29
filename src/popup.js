@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   // API key save
-  document.getElementById('save-key').addEventListener('click', function () {
+  document.getElementById('api-key').addEventListener('change', function () {
     const value = document.getElementById('api-key').value;
     console.log(value);
     chrome.storage.local.set({ 'open-ai-key': value }).then(() => {
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Query save
-  document.getElementById('save-query').addEventListener('click', function () {
+  document.getElementById('gpt-query').addEventListener('change', function () {
     const value = document.getElementById('gpt-query').value;
     console.log(value);
     chrome.storage.local.set({ 'gpt-query': value }).then(() => {

@@ -47,35 +47,40 @@
     <p class="text-gray-700">5. Press on the generated reply to send it.</p>
   </div>
 
-  <div class="mb-4 container px-4 mx-auto">
+  <div class="mb-8 container px-4 mx-auto">
     <h1 class="flex items-center text-xl font-extrabold dark:text-white">Config ⚙️</h1>
     <div class="mb-2 relative flex items-center">
       <div class="flex-grow border-t border-gray-400"></div>
     </div>
     <div class="max-w-2xl mb-4 mx-auto">
       <p class="text-gray-700">OpenAI API key:</p>
-      <input class="border-2 border-gray-500 h-10 pl-2" type="password" id="api-key"
+      <input class="border-2 w-full h-10 pl-2 rounded" type="password" id="api-key"
         placeholder="OpenAI platform API key"></input>
-      <button id="save-key" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Save
-      </button>
       <div class="flex items-center">
         <input id="show-api-key" type="checkbox" value=""
           class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-        <label for="checked-checkbox" class="ml-2 text-sm text-gray-700 dark:text-gray-300">Show API
-          key</label>
+        <p class="ml-2 text-sm text-gray-700 dark:text-gray-300">Show API
+          key</p>
       </div>
     </div>
 
-
     <p class="text-gray-700">ChatGPT query:</p>
     <div class="max-w-2xl flex mx-auto">
-      <textarea id="gpt-query" class="mr-1 border-2 border-gray-500" rows="4" cols="24"></textarea>
-      <br>
-      <button id="save-query" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Save
-      </button>
+      <textarea id="gpt-query" class="p-2 mr-1 w-full rounded border-2 border-gray-300 focus:border-gray-500" rows="4"
+        cols="24"></textarea>
     </div>
+  </div>
+  <div class="mb-4 container px-4 mx-auto">
+    <h1 class="flex items-center text-xl font-extrabold dark:text-white">GPT query example 💬</h1>
+    <div class="mb-2 relative flex items-center">
+      <div class="flex-grow border-t border-gray-400"></div>
+    </div>
+    <ul class="ml-4 list-disc">
+      <li>You are against everything, argue with every tweet.</li>
+      <li>You are a ghostwriter and reply to the user's tweets by talking directly to the person, you must keep it
+        short, exclude hashtags.</li>
+      <li>Say GM to every tweet.</li>
+    </ul>
   </div>
 </div>
 
