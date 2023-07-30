@@ -47,8 +47,8 @@ if (window.articles) {
             },
             body: JSON.stringify({
                 "messages": [
-                    { role: "assistant", content: gptQuery['gpt-query'] },
-                    { role: "user", content: content.innerText }
+                    { role: "system", content: gptQuery['gpt-query'] },
+                    { role: "user", content: '[username] wrote [tweet]'.replace('[username]', username).replace('[tweet]', content.innerText) }
                 ],
                 model: "gpt-3.5-turbo",
                 temperature: 1,

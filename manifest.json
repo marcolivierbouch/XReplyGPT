@@ -28,6 +28,18 @@
   "host_permissions": [
     "https://twitter.com/*"
   ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://twitter.com/*",
+        "https://mobile.twitter.com/*",
+        "https://x.com/*"
+      ],
+      "js": [
+        "src/content-window-exit.js"
+      ]
+    }
+  ],
   "action": {
     "default_popup": "src/index.html",
     "default_icon": "src/images/XReplyGPTbg.png"
