@@ -27,6 +27,19 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  document.getElementById('window-close').addEventListener('click', function (event) {
+    const isChecked = document.getElementById('window-close').checked;
+    if (isChecked) {
+      chrome.storage.local.set({ 'automatic-window-close': true }).then(() => {
+        console.log("Automatic window close enabled");
+      });
+    } else {
+      chrome.storage.local.set({ 'automatic-window-close': false }).then(() => {
+        console.log("Automatic window close disabled");
+      });
+    }
+  });
+
   // Set query by default is it is already there
   chrome.storage.local.get(['gpt-query']).then((result) => {
     document.getElementById('gpt-query').value =
@@ -34,6 +47,18 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   chrome.storage.local.get(['open-ai-key']).then((result) => {
-    document.getElementById('api-key').value = result['open-ai-key'];
+    if (result['open-ai-key'] == undefined) {
+      document.getElementById('api-key').value = "Change this value with your API key";
+    } else {
+      document.getElementById('api-key').value = result['open-ai-key'];
+    }
+  });
+
+  chrome.storage.local.get(['automatic-window-close']).then((result) => {
+    if (result['automatic-window-close'] == undefined) {
+      document.getElementById('window-close').checked = true;
+    } else {
+      document.getElementById('window-close').checked = result['automatic-window-close'];
+    }
   });
 }); 
