@@ -68,7 +68,6 @@ if (window.articles) {
         p.style.marginTop = '5px';
         div.appendChild(p);
 
-        console.log(resp.choices)
         resp.choices.forEach(choice => {
             let link = document.createElement("a");
             link.id = "generated-reply";
