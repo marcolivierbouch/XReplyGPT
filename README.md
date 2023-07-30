@@ -28,4 +28,4 @@ If you encounter any issues or have suggestions for improvements, please feel fr
 
 ## Disclaimer
 
-The XReplyGuy Chrome Extension is an unofficial tool and is not affiliated with Twitter. Use it responsibly and ensure that the generated replies align with Twitter's community guidelines and policies.
+The XReplyGPT Chrome Extension is an unofficial tool and is not affiliated with Twitter. Use it responsibly and ensure that the generated replies align with Twitter's community guidelines and policies.
