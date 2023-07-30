@@ -37,8 +37,8 @@ if (window.articles) {
         div.style.margin = '10px';
 
         const apiKey = await chrome.storage.local.get(['open-ai-key']);
-        const gptQuery = await chrome.storage.local.get(['gpt-query']) || "You are a ghostwriter and reply to the user's tweets by talking directly to the person, you must keep it short, exclude hashtags.";
-        // create a new button
+        const gptQuery = await chrome.storage.local.get(['gpt-query']);
+
         const response = await fetch('https://api.openai.com/v1/chat/completions', {
             method: 'POST',
             headers: {
@@ -47,8 +47,8 @@ if (window.articles) {
             },
             body: JSON.stringify({
                 "messages": [
-                    { role: "system", content: gptQuery['gpt-query'] },
-                    { role: "user", content: '[username] wrote [tweet]'.replace('[username]', username).replace('[tweet]', content.innerText) }
+                    { role: "system", 'content': gptQuery['gpt-query'] || "You are a ghostwriter and reply to the user's tweets by talking directly to the person, you must keep it short, exclude hashtags." },
+                    { role: "user", 'content': '[username] wrote [tweet]'.replace('[username]', username).replace('[tweet]', content.innerText) }
                 ],
                 model: "gpt-3.5-turbo",
                 temperature: 1,
@@ -68,6 +68,7 @@ if (window.articles) {
         p.style.marginTop = '5px';
         div.appendChild(p);
 
+        console.log(resp.choices)
         resp.choices.forEach(choice => {
             let link = document.createElement("a");
             link.id = "generated-reply";

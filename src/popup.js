@@ -47,10 +47,18 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   chrome.storage.local.get(['open-ai-key']).then((result) => {
-    document.getElementById('api-key').value = result['open-ai-key'];
+    if (result['open-ai-key'] == undefined) {
+      document.getElementById('api-key').value = "Change this value with your API key";
+    } else {
+      document.getElementById('api-key').value = result['open-ai-key'];
+    }
   });
 
   chrome.storage.local.get(['automatic-window-close']).then((result) => {
-    document.getElementById('window-close').checked = result['automatic-window-close'];
+    if (result['automatic-window-close'] == undefined) {
+      document.getElementById('window-close').checked = true;
+    } else {
+      document.getElementById('window-close').checked = result['automatic-window-close'];
+    }
   });
 }); 
