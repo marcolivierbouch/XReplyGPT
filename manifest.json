@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "version": "1.0",
+  "version": "2.0",
   "name": "𝕏ReplyGPT",
   "description": "Reply to tweets using ChatGPT",
   "icons": {
