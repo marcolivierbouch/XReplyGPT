@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "version": "2.0",
   "name": "𝕏ReplyGPT",
-  "description": "Reply to tweets using ChatGPT",
+  "description": "The fastest way to reply to tweets using ChatGPT and the easiest way to boost your tweet impressions.",
   "icons": {
     "128": "src/images/XReplyGPT.png"
   },

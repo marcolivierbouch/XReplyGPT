@@ -2,6 +2,10 @@
 window.articles = document.querySelectorAll('[data-testid="tweet"]');
 
 if (window.articles) {
+
+    const user = document.querySelector('[data-testid="AppTabBar_Profile_Link"]');
+    const userHandle = '@' + user.href.split('/')[3]
+
     window.articles.forEach(async article => {
         const content = article.querySelector('[data-testid="tweet"] [data-testid="tweetText"]');
         const user = article.querySelector('[data-testid="tweet"] [data-testid="User-Name"]');
@@ -17,8 +21,7 @@ if (window.articles) {
             }
         }
 
-        const userHandle = await chrome.storage.local.get(['user-handle']);
-        if (userHandle['user-handle'] == username) {
+        if (userHandle == username) {
             console.log("Don't reply to yourself");
             return;
         }
