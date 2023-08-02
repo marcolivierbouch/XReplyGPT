@@ -6,6 +6,7 @@ if (window.articles) {
         const content = article.querySelector('[data-testid="tweet"] [data-testid="tweetText"]');
         const user = article.querySelector('[data-testid="tweet"] [data-testid="User-Name"]');
 
+
         const spans = user.querySelectorAll('span');
 
         let username = ""
@@ -14,6 +15,12 @@ if (window.articles) {
                 username = spans[i].innerText || "";
                 break;
             }
+        }
+
+        const userHandle = await chrome.storage.local.get(['user-handle']);
+        if (userHandle['user-handle'] == username) {
+            console.log("Don't reply to yourself");
+            return;
         }
 
         const tweetRef = article.querySelectorAll('[id="generated-reply"]');

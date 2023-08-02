@@ -27,6 +27,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  document.getElementById('user-handle').addEventListener('change', function () {
+    const value = document.getElementById('user-handle').value;
+    chrome.storage.local.set({ 'user-handle': value }).then(() => {
+      console.log("New X handle saved");
+    });
+  });
+
   document.getElementById('window-close').addEventListener('click', function (event) {
     const isChecked = document.getElementById('window-close').checked;
     if (isChecked) {
@@ -44,6 +51,12 @@ document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.local.get(['gpt-query']).then((result) => {
     document.getElementById('gpt-query').value =
       result['gpt-query'] || "You are a ghostwriter and reply to the user's tweets by talking directly to the person, you must keep it short, exclude hashtags.";
+  });
+
+  chrome.storage.local.get(['user-handle']).then((result) => {
+    if (result['user-handle'] != undefined) {
+      document.getElementById('user-handle').value = result['user-handle'];
+    }
   });
 
   chrome.storage.local.get(['open-ai-key']).then((result) => {
