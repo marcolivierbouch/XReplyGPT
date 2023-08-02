@@ -1,6 +1,5 @@
 
 chrome.commands.onCommand.addListener((command) => {
-  
   console.log("Handling: " + command)
 
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
@@ -16,7 +15,7 @@ chrome.runtime.onInstalled.addListener(async function (details) {
 
   const self = await chrome.management.getSelf()
 
-  if (details.reason === 'update'){// && self.installType !== 'development') {
+  if (details.reason === 'update' && self.installType !== 'development') {
     const changelogUrl = chrome.runtime.getURL('src/changelog.html')
 
     chrome.tabs.create({ url: changelogUrl })

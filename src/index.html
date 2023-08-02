@@ -9,6 +9,33 @@
       height: 200px;
       width: 500px;
     }
+
+    .header-2 a:hover svg {
+      stroke: #ff9a00;
+      animation: wiggle 0.5s infinite;
+    }
+
+    @keyframes wiggle {
+      0% {
+        transform: rotateZ(0deg);
+      }
+
+      25% {
+        transform: rotateZ(-5deg);
+      }
+
+      50% {
+        transform: rotateZ(5deg);
+      }
+
+      75% {
+        transform: rotateZ(-5deg);
+      }
+
+      100% {
+        transform: rotateZ(0deg);
+      }
+    }
   </style>
   <meta charset="UTF-8">
   </meta>
@@ -17,17 +44,23 @@
 <div class="header-2 mr-6">
   <nav class="bg-white py-2 md:py-4">
     <div class="container px-4 mx-auto">
-      <div class="flex justify-between items-center">
-        <div class="flex justify-between items-center">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
           <image height="70" width="70" src="./images/XReplyGPT.png"></image>
-          <a href="#" class="font-bold text-xl text-blue-600">
+          <a href="#" class="font-bold text-xl text-blue-700 ml-2">
             XReplyGPT
           </a>
         </div>
-        <div class="flex-col mt-3 items-center">
-          <a href="https://github.com/marcolivierbouch/XReplyGPT" target="_blank"
-            class="p-2 lg:px-4 md:mx-2 text-white rounded bg-blue-600">Github</a>
-        </div>
+        <a href="https://github.com/marcolivierbouch/XReplyGPT" target="_blank"
+          class="p-2 lg:px-4 md:mx-2 text-gray-800 rounded border-2 border-blue-400 hover:border-blue-600 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1">
+            <polygon
+              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+            </polygon>
+          </svg>
+          Leave a review
+        </a>
       </div>
     </div>
   </nav>
@@ -73,7 +106,7 @@
 
   <div class="mr-6 py-2 md:py-2">
     <div class="mb-8 container px-4 mx-auto">
-      <h1 class="flex items-center text-xl font-extrabold dark:text-white">Features</h1>
+      <h1 class="flex items-center text-xl font-extrabold dark:text-white">Features ✨</h1>
       <div class="relative flex items-center">
         <div class="flex-grow border-t border-gray-400"></div>
       </div>
@@ -100,8 +133,11 @@
   </div>
 </div>
 
-<div class="mt-4 ml-6 w-full pb-4 text-sm text-left fade-in">
+<div class="mt-4 ml-6 w-full pb-4 pr-10 text-sm text-left fade-in">
   <a class="text-gray-500 no-underline hover:no-underline" href="#">&copy; XReplyGPT 2023</a>
+  <a class="text-gray-500 float-right px-4" target="_blank"
+    href="https://github.com/marcolivierbouch/XReplyGPT">Github</a>
+  <a class="text-gray-500 float-right" target="_blank" href="changelog.html">Changelog</a>
 </div>
 
 </html>
