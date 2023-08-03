@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   chrome.storage.local.get(['open-ai-key']).then((result) => {
     if (result['open-ai-key'] == undefined) {
-      document.getElementById('api-key').value = "Change this value with your API key";
+      document.getElementById('api-key').value = "";
     } else {
       document.getElementById('api-key').value = result['open-ai-key'];
     }
