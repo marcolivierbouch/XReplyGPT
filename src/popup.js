@@ -61,8 +61,4 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById('window-close').checked = result['automatic-window-close'];
     }
   });
-
-  chrome.storage.local.get(['automatic-window-close']).then((result) => {
-    document.getElementById('window-close').checked = result['automatic-window-close'];
-  });
 }); 
