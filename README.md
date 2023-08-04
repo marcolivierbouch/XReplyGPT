@@ -1,5 +1,17 @@
 
-# XReplyGPT Chrome Extension
+
+<p align='center'>
+    <h1>XReplyGPT Chrome Extension</h1>
+    <a href="https://github.com/marcolivierbouch/XReplyGPT/blob/main/LICENSE.txt">
+        <img alt="GitHub"
+        src="https://img.shields.io/github/license/marcolivierbouch/XReplyGPT">
+    </a>
+    <a href="https://chrome.google.com/webstore/detail/xreplygpt/ajjgpcaiofpdenhkmabcadabajmimpdk">
+      <img alt="Chrome Web Store"
+      src="https://img.shields.io/chrome-web-store/v/ajjgpcaiofpdenhkmabcadabajmimpdk">
+    </a>
+</p>
+
 
 ## Description
 
