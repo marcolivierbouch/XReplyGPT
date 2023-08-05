@@ -64,7 +64,9 @@ function waitForElementRemoval(selector) {
 
 
 chrome.storage.local.get(['automatic-window-close']).then((result) => {
-  result ||= { 'automatic-window-close': true };
+  if (result['automatic-window-close'] == undefined) {
+    result = { 'automatic-window-close': true };
+  }
 
   if (result['automatic-window-close']) {
     window.addEventListener("load", async (event) => {

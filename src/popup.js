@@ -57,6 +57,9 @@ document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.local.get(['automatic-window-close']).then((result) => {
     if (result['automatic-window-close'] == undefined) {
       document.getElementById('window-close').checked = true;
+      chrome.storage.local.set({ 'automatic-window-close': true }).then(() => {
+        console.log("Automatic window close enabled");
+      });
     } else {
       document.getElementById('window-close').checked = result['automatic-window-close'];
     }
