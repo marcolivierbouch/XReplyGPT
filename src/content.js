@@ -74,6 +74,11 @@ if (window.articles) {
         console.log(content);
 
         const allRefs = user.querySelectorAll('a');
+        console.log(allRefs);
+        if (allRefs.length < 3) {
+            console.log("Not enough refs");
+            return;
+        }
         const ref = allRefs[2].getAttribute('href');
         const tweetId = ref.split('/')[3];
         console.log(tweetId);
@@ -85,28 +90,53 @@ if (window.articles) {
         const apiKey = await chrome.storage.local.get(['open-ai-key']);
         const gptQuery = await chrome.storage.local.get(['gpt-query']);
 
-        const response = await fetch('https://api.openai.com/v1/chat/completions', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + apiKey['open-ai-key']
-            },
-            body: JSON.stringify({
-                "messages": [
-                    { role: "system", 'content': gptQuery['gpt-query'] || "You are a ghostwriter and reply to the user's tweets by talking directly to the person, you must keep it short, exclude hashtags." },
-                    { role: "user", 'content': '[username] wrote [tweet]'.replace('[username]', username).replace('[tweet]', content.innerText) }
-                ],
-                model: "gpt-3.5-turbo",
-                temperature: 1,
-                max_tokens: 256,
-                top_p: 1,
-                frequency_penalty: 0,
-                presence_penalty: 0,
+        const model = await chrome.storage.local.get(['openai-model']);
+        console.log(`Using model: ${model['openai-model']}`)
+
+        try{
+            const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + apiKey['open-ai-key']
+                },
+                body: JSON.stringify({
+                    "messages": [
+                        { role: "system", 'content': gptQuery['gpt-query'] || "You are a ghostwriter and reply to the user's tweets by talking directly to the person, you must keep it short, exclude hashtags." },
+                        { role: "user", 'content': '[username] wrote [tweet]'.replace('[username]', username).replace('[tweet]', content.innerText) }
+                    ],
+                    model: model['openai-model'],
+                    temperature: 1,
+                    max_tokens: 256,
+                    top_p: 1,
+                    frequency_penalty: 0,
+                    presence_penalty: 0,
+                })
             })
-        })
+        } catch (e) {
+            const errorModalContainer = document.createElement('div');
+            errorModalContainer.style.position = 'fixed';
+            errorModalContainer.style.top = '0';
+            errorModalContainer.style.left = '0';
+            errorModalContainer.style.width = '100%';
+            errorModalContainer.style.height = '100%';
+            errorModalContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+            errorModalContainer.style.display = 'flex';
+            errorModalContainer.style.justifyContent = 'center';
+            errorModalContainer.style.alignItems = 'center';
+
+            const errorMessage = document.createElement('p');
+            errorMessage.style.backgroundColor = 'white';
+            errorMessage.style.padding = '20px';
+            errorMessage.style.borderRadius = '5px';
+            errorMessage.textContent = 'An error occurred: ' + error.message;
+
+            errorModalContainer.appendChild(errorMessage);
+            document.body.appendChild(errorModalContainer);
+            return;
+        }
 
         const resp = await response.json()
-        console.log(resp);
 
         let p = document.createElement("p");
         p.innerHTML = "Generated reply: ";
