@@ -50,11 +50,13 @@ function loadAndPopulateModels() {
             modelSelect.innerHTML = '';
 
             // Add default option
-            const defaultOption = document.createElement('option');
-            defaultOption.value = 'gpt-3.5-turbo';
-            defaultOption.text = 'gpt-3.5-turbo';
-            defaultOption.selected = true;
-            modelSelect.appendChild(defaultOption);
+            chrome.storage.local.get(['openai-model']).then((model) => {
+                const defaultOption = document.createElement('option');
+                defaultOption.value = model['openai-model'] || 'gpt-3.5-turbo';
+                defaultOption.text = model['openai-model'] || 'gpt-3.5-turbo';
+                defaultOption.selected = true;
+                modelSelect.appendChild(defaultOption);
+            });
 
             // Add models from response
             console.log(response.data);
@@ -138,7 +140,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   chrome.storage.local.get(['openai-model']).then((result) => {
-    console.log(result);
     if (result['openai-model'] == undefined) {
       chrome.storage.local.set({ 'openai-model': 'gpt-3.5-turbo' })
     }
