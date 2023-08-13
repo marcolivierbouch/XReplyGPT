@@ -10,10 +10,10 @@ function getOpenAIModels(apiKey) {
 
 function validateApiKey() {
   const apiKey = document.getElementById('api-key').value;
-  const gptQueryInput = document.getElementById('gpt-query');
   const apiKeyInput = document.getElementById('api-key');
   const validateButton = document.getElementById('validate-button');
   const selectModels = document.getElementById('models-select');
+  const gptQueryInput = document.getElementById('gpt-query');
 
   getOpenAIModels(apiKey)
       .then((response) => {
@@ -52,8 +52,8 @@ function loadAndPopulateModels() {
             // Add default option
             chrome.storage.local.get(['openai-model']).then((model) => {
                 const defaultOption = document.createElement('option');
-                defaultOption.value = model['openai-model'] || 'gpt-3.5-turbo';
-                defaultOption.text = model['openai-model'] || 'gpt-3.5-turbo';
+                defaultOption.value = model['openai-model'] || 'gpt-4';
+                defaultOption.text = model['openai-model'] || 'gpt-4';
                 defaultOption.selected = true;
                 modelSelect.appendChild(defaultOption);
             });
@@ -133,6 +133,11 @@ document.addEventListener('DOMContentLoaded', function () {
     if (result['open-ai-key'] == undefined) {
       document.getElementById('api-key').value = "";
       document.getElementById('validate-button').classList.add('invalid');
+
+      const selectModels = document.getElementById('models-select');
+      const gptQueryInput = document.getElementById('gpt-query');
+      gptQueryInput.disabled = true;
+      selectModels.disabled = true;
     } else {
       document.getElementById('api-key').value = result['open-ai-key'];
       validateApiKey();
@@ -141,7 +146,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
   chrome.storage.local.get(['openai-model']).then((result) => {
     if (result['openai-model'] == undefined) {
-      chrome.storage.local.set({ 'openai-model': 'gpt-3.5-turbo' })
+      chrome.storage.local.set({ 'openai-model': 'gpt-4' })
+      const modelSelect = document.getElementById('models-select');
+      const defaultOption = document.createElement('option');
+      defaultOption.value = 'gpt-4';
+      defaultOption.text = 'gpt-4';
+      defaultOption.selected = true;
+      modelSelect.appendChild(defaultOption);
+    } else {
+      const modelSelect = document.getElementById('models-select');
+      const defaultOption = document.createElement('option');
+      defaultOption.value = result['openai-model'];
+      defaultOption.text = result['openai-model'];
+      defaultOption.selected = true;
+      modelSelect.appendChild(defaultOption);
     }
   });
 
