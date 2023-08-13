@@ -74,6 +74,11 @@ if (window.articles) {
         console.log(content);
 
         const allRefs = user.querySelectorAll('a');
+        console.log(allRefs);
+        if (allRefs.length < 3) {
+            console.log("Not enough refs");
+            return;
+        }
         const ref = allRefs[2].getAttribute('href');
         const tweetId = ref.split('/')[3];
         console.log(tweetId);
@@ -84,6 +89,9 @@ if (window.articles) {
 
         const apiKey = await chrome.storage.local.get(['open-ai-key']);
         const gptQuery = await chrome.storage.local.get(['gpt-query']);
+
+        const model = await chrome.storage.local.get(['openai-model']);
+        console.log(`Using model: ${model['openai-model']}`)
 
         const response = await fetch('https://api.openai.com/v1/chat/completions', {
             method: 'POST',
@@ -96,7 +104,7 @@ if (window.articles) {
                     { role: "system", 'content': gptQuery['gpt-query'] || "You are a ghostwriter and reply to the user's tweets by talking directly to the person, you must keep it short, exclude hashtags." },
                     { role: "user", 'content': '[username] wrote [tweet]'.replace('[username]', username).replace('[tweet]', content.innerText) }
                 ],
-                model: "gpt-3.5-turbo",
+                model: model['openai-model'],
                 temperature: 1,
                 max_tokens: 256,
                 top_p: 1,
@@ -105,8 +113,34 @@ if (window.articles) {
             })
         })
 
+        if (!response.ok) {
+            // creates a modal error over twitter content
+            const errorMessage = "Error while generating a reply for this tweet: " + (await response.json()).error.message;
+            let p = document.createElement("p");
+            p.innerHTML = errorMessage;
+            p.style.marginBottom = '5px';
+            p.style.marginTop = '5px';
+            div.appendChild(p);
+
+            // Create the button
+            let button = document.createElement("button");
+            button.innerText = "Report Issue";
+            button.classList.add("button");
+            button.style.display = "flex";
+            button.style.alignItems = "center";
+            button.style.marginTop = "10px";
+            // Add a click event handler to open the GitHub issue URL
+            button.addEventListener("click", function() {
+                window.open(`https://github.com/marcolivierbouch/XReplyGPT/issues/new?title=Issue%20while%20generating%20tweet&body=${errorMessage}`);
+            });
+
+            div.appendChild(button);
+            shadowRoot.appendChild(div);
+            content.appendChild(shadowRoot);
+            return;
+        }
+
         const resp = await response.json()
-        console.log(resp);
 
         let p = document.createElement("p");
         p.innerHTML = "Generated reply: ";
