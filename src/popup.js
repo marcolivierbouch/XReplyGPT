@@ -72,14 +72,6 @@ function loadAndPopulateModels() {
         });
 }
 
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (message.action === 'showLoadingPopup') {
-    console.log("here")
-    location.href = "./loading.html"
-  }
-});
-
-
 document.addEventListener('DOMContentLoaded', function () {
 
   // API key save
