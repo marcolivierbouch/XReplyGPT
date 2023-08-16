@@ -54,6 +54,21 @@
     #validate-button.invalid {
         animation: breathing 1.5s infinite;
     }
+
+    .shortcut {
+      border-radius: 4px;
+      padding: 4px 8px;
+      margin: 4px 0;
+    }
+    
+    .shortcut-key {
+      background-color: #888;
+      color: white;
+      border-radius: 3px;
+      padding: 0 4px;
+      margin-right: 4px;
+    }
+
   </style>
   <meta charset="UTF-8">
   </meta>
@@ -145,6 +160,19 @@
           reply</lable>
       </div>
     </div>
+  </div>
+
+  <div class="mb-8 container px-4 mx-auto">
+    <h1 class="flex items-center text-xl font-extrabold dark:text-white">Shortcuts ⌨️</h1>
+    <div class="mb-2 relative flex items-center">
+      <div class="flex-grow border-t border-gray-400"></div>
+    </div>
+    <ul class="ml-4 list-disc">
+      <li class="shortcut"><span class="shortcut-key">CTRL+SHIFT+Q</span> Generate reply for tweets.</li>
+      <li class="shortcut"><span class="shortcut-key">CTRL+SHIFT+E</span> Move to the next generated reply in the Home page. After doing this shortcut, the focus will be on the reply button, so you can directly press ENTER to enter the reply window.</li>
+      <li class="shortcut"><span class="shortcut-key">CTRL+SHIFT+E</span> Move to the "reply" button in a reply window. After doing this shortcut, the focus will be on the "send" button, so you can directly press ENTER to reply.</li>
+      <li class="shortcut"><span class="shortcut-key">CTRL+SHIFT+S</span> Move to the previous generated reply.</li>
+    </ul>
   </div>
 
   <div class="mb-4 container px-4 mx-auto">
