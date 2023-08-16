@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "version": "3.0",
+  "version": "4.0",
   "name": "XReplyGPT",
   "description": "The fastest way to reply to tweets using ChatGPT and the easiest way to boost your tweet impressions.",
   "icons": {
@@ -17,6 +17,20 @@
         "mac": "Command+Shift+Q"
       },
       "description": "Generate reply"
+    },
+    "move_to_next_button": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+E",
+        "mac": "Command+Shift+E"
+      },
+      "description": "Move to the next button with the id 'generated-reply'"
+    },
+    "move_to_previous_button": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "Move to the previous button with the id 'generated-reply'"
     }
   },
   "permissions": [
