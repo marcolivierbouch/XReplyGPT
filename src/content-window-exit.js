@@ -62,6 +62,15 @@ function waitForElementRemoval(selector) {
   });
 }
 
+async function waitForElementsBeforeQuit() {
+  console.log("page is fully loaded");
+  await waitForElement('[data-testid="mask"]')
+  console.log("element found");
+  await waitForElementRemoval('[data-testid="mask"]')
+  console.log("element removed");
+  window.close();
+}
+
 
 chrome.storage.local.get(['automatic-window-close']).then((result) => {
   if (result['automatic-window-close'] == undefined) {
@@ -69,14 +78,8 @@ chrome.storage.local.get(['automatic-window-close']).then((result) => {
   }
 
   if (result['automatic-window-close']) {
-    window.addEventListener("load", async (event) => {
-      console.log("page is fully loaded");
-      await waitForElement('[data-testid="mask"]')
-      console.log("element found");
-      await waitForElementRemoval('[data-testid="mask"]')
-      console.log("element removed");
-      window.close();
-    });
+    console.log('before event');
+    waitForElementsBeforeQuit();
   }
 })
 
