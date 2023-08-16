@@ -162,6 +162,7 @@ function generateReply() {
                 console.log("Not enough refs");
                 return;
             }
+          
             const ref = allRefs[2].getAttribute('href');
             const tweetId = ref.split('/')[3];
             console.log(tweetId);
