@@ -52,8 +52,8 @@ function loadAndPopulateModels() {
             // Add default option
             chrome.storage.local.get(['openai-model']).then((model) => {
                 const defaultOption = document.createElement('option');
-                defaultOption.value = model['openai-model'] || 'gpt-4';
-                defaultOption.text = model['openai-model'] || 'gpt-4';
+                defaultOption.value = model['openai-model'] || 'gpt-3.5-turbo';
+                defaultOption.text = model['openai-model'] || 'gpt-3.5-turbo';
                 defaultOption.selected = true;
                 modelSelect.appendChild(defaultOption);
             });
@@ -146,11 +146,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   chrome.storage.local.get(['openai-model']).then((result) => {
     if (result['openai-model'] == undefined) {
-      chrome.storage.local.set({ 'openai-model': 'gpt-4' })
+      chrome.storage.local.set({ 'openai-model': 'gpt-3.5-turbo' })
       const modelSelect = document.getElementById('models-select');
       const defaultOption = document.createElement('option');
-      defaultOption.value = 'gpt-4';
-      defaultOption.text = 'gpt-4';
+      defaultOption.value = 'gpt-3.5-turbo';
+      defaultOption.text = 'gpt-3.5-turbo';
       defaultOption.selected = true;
       modelSelect.appendChild(defaultOption);
     } else {
