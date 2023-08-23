@@ -26,12 +26,12 @@ The XReplyGPT Chrome Extension is a simple yet powerful tool that automatically 
 4. Press the shortcut CTRL+SHIFT+Q.
 5. Press on the generated reply to send it.
 
-![api_key](./docs/generate_api_key.gif)
+![api_key](./chrome_img/generate_api_key.gif)
 
 ## Demo
 Here is a quick demo of the extension in action:
 
-![demo](./docs/demo.gif)
+![demo](./chrome_img/demo.gif)
 
 
 ## Feedback and Support
