@@ -1,7 +1,7 @@
 
 
 <p align='center'>
-    <h1>XReplyGPT Chrome Extension</h1>
+    <h1>XReplyGPT Chrome Extension, generate Twitter reply using ChatGPT</h1>
     <a href="https://github.com/marcolivierbouch/XReplyGPT/blob/main/LICENSE.txt">
         <img alt="GitHub"
         src="https://img.shields.io/github/license/marcolivierbouch/XReplyGPT">
