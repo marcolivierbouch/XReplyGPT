@@ -12,6 +12,8 @@
     </a>
 </p>
 
+Chrome store: https://chrome.google.com/webstore/detail/xreplygpt/ajjgpcaiofpdenhkmabcadabajmimpdk/
+
 Youtube video: https://www.youtube.com/watch?v=nJZ6UyEtyjU
 
 Website: https://marcolivierbouch.github.io/XReplyGPT/
