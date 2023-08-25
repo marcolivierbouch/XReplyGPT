@@ -12,16 +12,13 @@
     </a>
 </p>
 
-Chrome store: https://chrome.google.com/webstore/detail/xreplygpt/ajjgpcaiofpdenhkmabcadabajmimpdk/
-
-Youtube video: https://www.youtube.com/watch?v=nJZ6UyEtyjU
-
-Website: https://marcolivierbouch.github.io/XReplyGPT/
-
 ## Description
-
 The [XReplyGPT Chrome Extension](https://chrome.google.com/webstore/detail/xreplygpt/ajjgpcaiofpdenhkmabcadabajmimpdk/) is a simple yet powerful tool that automatically generates replies to tweets on Twitter. It uses open AI algorithms to analyze tweets and craft appropriate and relevant responses. This extension is designed to save you time and effort in engaging with your followers on Twitter by providing quick and personalized replies.
 
+## Links
+- Chrome store: https://chrome.google.com/webstore/detail/xreplygpt/ajjgpcaiofpdenhkmabcadabajmimpdk/
+- Youtube video: https://www.youtube.com/watch?v=nJZ6UyEtyjU
+- Website: https://marcolivierbouch.github.io/XReplyGPT/
 
 ## How it works?
 1. Create an OpenAI API key [here](https://platform.openai.com/account/api-keys). Make sure you have a paid account or it won't work.
