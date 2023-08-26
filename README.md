@@ -19,6 +19,7 @@ The [XReplyGPT Chrome Extension](https://chrome.google.com/webstore/detail/xrepl
 - Chrome store: https://chrome.google.com/webstore/detail/xreplygpt/ajjgpcaiofpdenhkmabcadabajmimpdk/
 - Youtube video: https://www.youtube.com/watch?v=nJZ6UyEtyjU
 - Website: https://marcolivierbouch.github.io/XReplyGPT/
+- Medium: https://medium.com/@marcolivierbouch/how-to-reply-in-twitter-using-chatgpt-xreplygpt-c2c6a5f09562
 
 ## How it works?
 1. Create an OpenAI API key [here](https://platform.openai.com/account/api-keys). Make sure you have a paid account or it won't work.
