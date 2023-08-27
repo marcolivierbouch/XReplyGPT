@@ -37,7 +37,6 @@ function hideLoadingSpinner(container) {
 }
 
 function generateReply() {
-  console.log("Generating replies");
     window.articles = document.querySelectorAll('[data-testid="tweet"]');
 
     if (window.articles) {

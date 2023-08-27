@@ -1,5 +1,3 @@
-
-
 <p align='center'>
     <h1>XReplyGPT Chrome Extension, generate Twitter reply using ChatGPT</h1>
     <a href="https://github.com/marcolivierbouch/XReplyGPT/blob/main/LICENSE.txt">

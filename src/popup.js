@@ -73,6 +73,38 @@ function loadAndPopulateModels() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  const userAgent = navigator.userAgent.toLowerCase();
+  const userPlatform = /mac|win/.test(userAgent) ? /mac/.test(userAgent) ? 'mac' : 'win' : '';
+
+  // Mapping of platform-specific shortcut texts
+  const shortcuts = {
+    mac: {
+      'shortcut-generate': "⌘+SHIFT+L",
+      'shortcut-next': "⌘+SHIFT+E",
+      'shortcut-reply': "⌘+SHIFT+E",
+      'shortcut-previous': "⌘+SHIFT+S",
+    },
+    win: {
+      'shortcut-generate': "CTRL+SHIFT+L",
+      'shortcut-next': "CTRL+SHIFT+E",
+      'shortcut-reply': "CTRL+SHIFT+E",
+      'shortcut-previous': "CTRL+SHIFT+S",
+    },
+  };
+
+  // Function to update shortcut text
+  function updateShortcutText(elementId, platform) {
+    const shortcutElement = document.getElementById(elementId);
+    if (shortcutElement) {
+      shortcutElement.textContent = shortcuts[platform][elementId];
+    }
+  }
+
+  // Update each shortcut based on the platform
+  updateShortcutText("shortcut-generate", userPlatform);
+  updateShortcutText("shortcut-next", userPlatform);
+  updateShortcutText("shortcut-reply", userPlatform);
+  updateShortcutText("shortcut-previous", userPlatform);
 
   // API key save
   document.getElementById('api-key').addEventListener('change', function () {
