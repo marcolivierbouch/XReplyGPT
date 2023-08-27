@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "version": "5.1",
+  "version": "6.0",
   "name": "XReplyGPT",
   "description": "The fastest way to reply to tweets using ChatGPT and the easiest way to boost your tweet impressions.",
   "icons": {
@@ -13,8 +13,8 @@
   "commands": {
     "generate_reply": {
       "suggested_key": {
-        "default": "Ctrl+Shift+Q",
-        "mac": "Command+Shift+Q"
+        "default": "Ctrl+Shift+L",
+        "mac": "Command+Shift+L"
       },
       "description": "Generate reply"
     },
