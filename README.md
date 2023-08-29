@@ -23,7 +23,7 @@ The [XReplyGPT Chrome Extension](https://chrome.google.com/webstore/detail/xrepl
 1. Create an OpenAI API key [here](https://platform.openai.com/account/api-keys). Make sure you have a paid account or it won't work.
 2. Save it in the config section.
 3. Open https://x.com.
-4. Press the shortcut CTRL+SHIFT+Q.
+4. Press the shortcut CTRL+SHIFT+L.
 5. Press on the generated reply to send it.
 
 ![api_key](./chrome_img/generate_api_key.gif)
