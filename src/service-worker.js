@@ -37,3 +37,7 @@ chrome.runtime.onInstalled.addListener(async function (details) {
     chrome.tabs.create({ url: changelogUrl })
   }
 })
+
+chrome.runtime.setUninstallURL(
+  'https://marcolivierbouch.github.io/XReplyGPT/uninstall.html'
+)
