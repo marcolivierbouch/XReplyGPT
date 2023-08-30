@@ -109,8 +109,8 @@
         target="_blank" class="underline">here</a>. Make sure you have a paid account or it won't work.</p>
     <p class="text-gray-700">2. Save it in the config section. </p>
     <p class="text-gray-700">3. Open <a class="underline" href="https://x.com" target="_blank">https://x.com</a>.</p>
-    <p class="text-gray-700">4. Press the shortcut CTRL+SHIFT+L.</p>
-    <p class="text-gray-700">5. Press on the generated reply to send it.</p>
+    <p class="text-gray-700">4. Press the shortcut "Generate reply for tweets".</p>
+    <p class="text-gray-700">5. Click on the generated reply to send it.</p>
   </div>
 
   <div class="mb-6 container px-4 mx-auto">
@@ -120,17 +120,17 @@
     </div>
     <div class="max-w-2xl mb-4 mx-auto">
         <div class="flex items-center">
-            <input class="border-2 w-full h-10 pl-2 rounded" type="password" id="api-key"
-                placeholder="OpenAI platform API key">
-            <button id="validate-button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 rounded ml-2">
-                Validate
-            </button>
+          <input class="border-2 w-full h-10 pl-2 rounded" type="password" id="api-key"
+              placeholder="OpenAI platform API key">
+          <button id="validate-button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 rounded ml-2">
+              Validate
+          </button>
         </div>
         <div class="flex items-center">
-            <input id="show-api-key" type="checkbox" value=""
-                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-            <label for="show-api-key" class="ml-2 text-sm text-gray-700 dark:text-gray-300">Show API
-                key</label>
+          <input id="show-api-key" type="checkbox" value=""
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+          <label for="show-api-key" class="ml-2 text-sm text-gray-700 dark:text-gray-300">Show API
+              key</label>
         </div>
     </div>
 
@@ -163,15 +163,17 @@
   </div>
 
   <div class="mb-8 container px-4 mx-auto">
-    <h1 class="flex items-center text-xl font-extrabold dark:text-white">Shortcuts ⌨️</h1>
+  <div class="flex items-start justify-between mb-1"> <!-- Change items-center to items-start to align title to the left -->
+    <h1 class="text-xl font-extrabold dark:text-white">Shortcuts ⌨️</h1> <!-- Removed unnecessary flex class from the title -->
+    <button id="extension-shortcuts-button" class="py-2 bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 rounded ml-2">
+      Edit shortcuts
+    </button>
+  </div>
+
     <div class="mb-2 relative flex items-center">
       <div class="flex-grow border-t border-gray-400"></div>
     </div>
-    <ul class="ml-4 list-disc">
-      <li class="shortcut"><span id="shortcut-generate" class="shortcut-key">CTRL+SHIFT+L</span> Generate reply for tweets.</li>
-      <li class="shortcut"><span id="shortcut-next" class="shortcut-key">CTRL+SHIFT+E</span> (When you are on the home page) Move to the next generated reply in the Home page. After doing this shortcut, the focus will be on the reply button, so you can directly press ENTER to enter the reply window. When you are at the last generated reply it will try a new batch of reply generation.</li>
-      <li class="shortcut"><span id="shortcut-reply" class="shortcut-key">CTRL+SHIFT+E</span> (When you are in the reply page) Move to the "reply" button in a reply window. After doing this shortcut, the focus will be on the "send" button, so you can directly press <span class="shortcut-key">ENTER</span>to reply.</li>
-      <li class="shortcut"><span id="shortcut-previous" class="shortcut-key">CTRL+SHIFT+S</span> Move to the previous generated reply.</li>
+    <ul  id="shortcut-container" class="ml-4 list-disc">
     </ul>
   </div>
 
@@ -184,7 +186,7 @@
       <li>You are against everything, argue with every tweet.</li>
       <li>You are a ghostwriter and reply to the user's tweets by talking directly to the person, you must keep it
         short, exclude hashtags.</li>
-      <li>Say GM to every tweet.</li>
+      <li>Reply to tweet, add value to what they are saying, add one typo and it must feel like a real person. Exclude hashtag.</li>
     </ul>
   </div>
 </div>
@@ -194,6 +196,7 @@
   <a class="text-gray-500 float-right px-4" target="_blank"
     href="https://github.com/marcolivierbouch/XReplyGPT">Github</a>
   <a class="text-gray-500 float-right" target="_blank" href="changelog.html">Changelog</a>
+  <a class="text-gray-500 float-right px-4" target="_blank" href="https://marcolivierbouch.github.io/XReplyGPT/">Website</a>
 </div>
 
 </html>
