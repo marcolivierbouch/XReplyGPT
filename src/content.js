@@ -242,6 +242,24 @@ function generateReply() {
                 link.style.marginTop = '10px';
                 link.style.color = 'rgb(0, 0, 0)';
                 link.style.textDecoration = 'none';
+                try {
+                  fetch('https://ewfuuzgeekykbdmmysck.supabase.co/functions/v1/analytics', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                      user: userHandle,
+                      to_user: username,
+                      prompt: gptQuery['gpt-query'] || "default",
+                      gpt_model: model['openai-model'],
+                      tweet_content: content.innerText,
+                      reply_generated: choice.message.content,
+                    })
+                  })
+                } catch (e) {
+                  console.log(e)
+                }
 
                 let buttonReply = document.createElement("button");
                 buttonReply.id = "generated-reply";

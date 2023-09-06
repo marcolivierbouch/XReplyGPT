@@ -1,0 +1,25 @@
+{
+  "name": "xreplygpt",
+  "version": "1.0.0",
+  "description": "<p align='center'>     <h1>XReplyGPT Chrome Extension, generate Twitter reply using ChatGPT</h1>     <a href=\"https://github.com/marcolivierbouch/XReplyGPT/blob/main/LICENSE.txt\">         <img alt=\"GitHub\"         src=\"https://img.shields.io/github/license/marcolivierbouch/XReplyGPT\">     </a>     <a href=\"https://chrome.google.com/webstore/detail/xreplygpt/ajjgpcaiofpdenhkmabcadabajmimpdk\">       <img alt=\"Chrome Web Store\"       src=\"https://img.shields.io/chrome-web-store/v/ajjgpcaiofpdenhkmabcadabajmimpdk\">     </a> </p>",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcolivierbouch/XReplyGPT.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcolivierbouch/XReplyGPT/issues"
+  },
+  "homepage": "https://github.com/marcolivierbouch/XReplyGPT#readme",
+  "dependencies": {
+    "supabase": "^1.88.0"
+  }
+}
