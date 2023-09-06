@@ -108,8 +108,6 @@ function generateReply() {
 
         console.log(window.articles)
 
-        let nbOfReplyGenerated = 0;
-
         window.articles.forEach(async article => {
             const content = article.querySelector('[data-testid="tweet"] [data-testid="tweetText"]');
             const user = article.querySelector('[data-testid="tweet"] [data-testid="User-Name"]');
@@ -226,9 +224,6 @@ function generateReply() {
                 return;
             }
 
-            nbOfReplyGenerated = nbOfReplyGenerated + 1
-            console.log(`Generated ${nbOfReplyGenerated} replies`);
-
             const resp = await response.json()
             hideLoadingSpinner(content);
 
@@ -247,21 +242,24 @@ function generateReply() {
                 link.style.marginTop = '10px';
                 link.style.color = 'rgb(0, 0, 0)';
                 link.style.textDecoration = 'none';
-
-                fetch('http://localhost:54321/functions/v1/analytics', {
-                  method: 'POST',
-                  headers: {
-                      'Content-Type': 'application/json'
-                  },
-                  body: JSON.stringify({
-                    user: userHandle,
-                    to_user: username,
-                    prompt: gptQuery['gpt-query'] || "default",
-                    gpt_model: model['openai-model'],
-                    tweet_content: content.innerText,
-                    reply_generated: choice.message.content,
+                try {
+                  fetch('https://ewfuuzgeekykbdmmysck.supabase.co/functions/v1/analytics', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                      user: userHandle,
+                      to_user: username,
+                      prompt: gptQuery['gpt-query'] || "default",
+                      gpt_model: model['openai-model'],
+                      tweet_content: content.innerText,
+                      reply_generated: choice.message.content,
+                    })
                   })
-                })
+                } catch (e) {
+                  console.log(e)
+                }
 
                 let buttonReply = document.createElement("button");
                 buttonReply.id = "generated-reply";
