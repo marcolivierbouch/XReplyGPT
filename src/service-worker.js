@@ -26,6 +26,12 @@ chrome.commands.onCommand.addListener((command) => {
   }
 });
 
+
+//chrome.scripting.registerContentScripts({
+//  matches: ["https://twitter.com/*"],
+//  files: ['src/single-reply-content.js'],
+//});
+
 chrome.runtime.onInstalled.addListener(async function (details) {
   console.log('Handling runtime install...', ...arguments)
 
@@ -39,5 +45,9 @@ chrome.runtime.onInstalled.addListener(async function (details) {
 })
 
 chrome.runtime.setUninstallURL(
-  'https://marcolivierbouch.github.io/XReplyGPT/uninstall.html'
+  'https://xreplygpt.com/uninstall.html'
 )
+
+chrome.runtime.onInstalled.addListener(function (details) {
+  chrome.tabs.create({ url: 'https://xreplygpt.com/welcome.html' });
+});
