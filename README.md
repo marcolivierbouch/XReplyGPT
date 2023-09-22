@@ -42,3 +42,9 @@ If you encounter any issues or have suggestions for improvements, please feel fr
 ## Disclaimer
 
 The XReplyGPT Chrome Extension is an unofficial tool and is not affiliated with Twitter. Use it responsibly and ensure that the generated replies align with Twitter's community guidelines and policies.
+
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=marcolivierbouch/xreplygpt&type=Date)](https://star-history.com/#marcolivierbouch/xreplygpt&Date)
+
